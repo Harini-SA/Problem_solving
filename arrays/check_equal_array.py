@@ -5,10 +5,12 @@ arr1 = array('i',[3,2,1])
 if len(arr)!=len(arr1):
     print("not same")
 else:
-   freq = Counter(arr)
-   for i in arr1:
-       if i not in freq:
+    freq = Counter(arr)
+    freq1 = Counter(arr1)
+    for key in freq.keys():
+        if freq[key] != freq1[key]:
            print("not equal")
-   else:
+           break
+    else:
        print("same")
                
