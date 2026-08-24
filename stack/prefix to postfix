@@ -1,0 +1,12 @@
+def preToPost(s):
+    stack = []
+    for i in range(len(s)-1,-1,-1):
+        if s[i] == "+" or s[i] == "-" or s[i] =="*" or s[i] == "/":
+            op1 = stack.pop()
+            op2 = stack.pop()
+            temp = op1 + op2 + s[i]
+            stack.append(temp)
+        else:
+            stack.append(s[i])
+    return stack[-1]
+print(preToPost("*+ABC")) 
